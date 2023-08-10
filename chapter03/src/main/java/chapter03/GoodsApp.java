@@ -21,7 +21,12 @@ public class GoodsApp {
 		System.out.println(Goods.countOfGoods);
 
 		camera.showInfo();
+		
+		camera.setPrice(500000);
 		int discountPrice = camera.calcDiscountPrice(0.5);
 		System.out.println(discountPrice);
+		
+		Goods tv = new Goods("TV", 400000, 10, 20);
+		tv.showInfo();
 	}
 }

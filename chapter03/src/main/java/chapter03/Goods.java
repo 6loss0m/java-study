@@ -12,9 +12,6 @@ public class Goods {
 		// Goods.countOfGoods++;
 		countOfGoods++;
 	}
-	public Goods(int price) {
-		this.price = price;
-	}
 	public Goods(String name, int price, int countStock, int countSold) {
 		this.name = name;
 		this.price = price;

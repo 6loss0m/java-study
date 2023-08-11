@@ -38,7 +38,7 @@ public class MyStack{
 	}
 
 	public String pop() throws MyStackException {
-		if(top == -1) {
+		if(isEmpty()) {
 //			System.out.println("Exception");
 			throw new MyStackException("stack is empty");
 		}

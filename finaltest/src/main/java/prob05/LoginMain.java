@@ -37,6 +37,8 @@ public class LoginMain {
 	
 	public static void login(List<User> users, User user ){
 		/* 코드 작성 */
+//		boolean r = users.contains(user);
+//		System.out.println(r);
 		int result = users.indexOf(user);
 		if(result == -1){
 			throw new UserNotFoundException();

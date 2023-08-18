@@ -1,7 +1,7 @@
 package prob05;
 
 public class User {
-	private String id;	
+	private String id;
 	private String password;
 
 	public User(String id, String password) {
@@ -45,10 +45,11 @@ public class User {
 		if (id == null) {
 			if (other.id != null)
 				return false;
-		} else if (!id.equals(other.id))
+		} else if (!id.equals(other.id)) {
 			return false;
+		}
+
 		return true;
 	}
-	
-	
+
 }

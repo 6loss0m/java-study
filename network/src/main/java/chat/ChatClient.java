@@ -22,6 +22,7 @@ public class ChatClient {
 		try {
 			// 1. 키보드 연결
 			scanner = new Scanner(System.in);
+			
 			// 2. socket 생성
 			socket = new Socket();
 

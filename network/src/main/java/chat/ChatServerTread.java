@@ -58,11 +58,11 @@ public class ChatServerTread extends Thread {
 				// 4. 프로토콜 분석
 				String[] tokens = request.split(":");
 
-				if ("join".equals(tokens[0])) {
+				if ("JOIN".equals(tokens[0])) {
 					doJoin(tokens[1], printWriter);
-				} else if ("message".equals(tokens[0])) {
+				} else if ("MESSAGE".equals(tokens[0])) {
 					doMessage(tokens[1]);
-				} else if ("quit".equals(tokens[0])) {
+				} else if ("QUIT".equals(tokens[0])) {
 					doQuit(printWriter);
 					break;
 				} else {

@@ -1,10 +1,14 @@
-package chat;
+package chat.gui;
 
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.SocketException;
 import java.util.Scanner;
+
+import chat.ChatServer;
 
 public class ChatClientApp {
 	private static final String SERVER_IP = "192.168.0.146";
@@ -32,10 +36,14 @@ public class ChatClientApp {
 
 			// 2. connect server
 			socket.connect(new InetSocketAddress(SERVER_IP, ChatServer.PORT));
-			
+
+			PrintWriter printWriter = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), "utf-8"), true);
+
 			// 3. join protocol 진행
 			String line = "JOIN:OK";
 			if ("JOIN:OK".equals(line)) {
+				printWriter.println("JOIN:" + name);
+				printWriter.flush();
 				new ChatWindow(name, socket).show();
 			}
 		} catch (SocketException e) {
